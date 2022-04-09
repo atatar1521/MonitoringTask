@@ -1,18 +1,13 @@
+<%@ page import = "java.util.Date" %>
+<%@ page import = "java.text.SimpleDateFormat" %>
 <html>
-<head><title>First JSP</title></head>
+<head>
+<%
+  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+  String date = sdf.format(new Date());
+%>
+</head>
 <body>
-  <%
-    double num = Math.random();
-    if (num > 0.95) {
-  %>
-      <h2>You'll have a luck day!</h2><p>(<%= num %>)</p>
-  <%
-    } else {
-  %>
-      <h2>Well, life goes on ... </h2><p>(<%= num %>)</p>
-  <%
-    }
-  %>
-  <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
+<p>Hello!  The time is now <%=date%></p>
 </body>
 </html>
